@@ -10,7 +10,8 @@ const getTopics = async () => {
     });
 
     if (!res.ok) {
-      throw new Error("Failed to fetch topics");
+      // throw new Error("Failed to fetch topics");
+      return { topics: [] };
     }
 
     return res.json();
@@ -20,7 +21,24 @@ const getTopics = async () => {
 };
 
 export default async function TopicsList() {
-  const { topics } = await getTopics();
+  // const { topics } = await getTopics();
+  const topics = [
+    {
+      _id: "1",
+      title: "First Topic",
+      description: "This is the first topic",
+    },
+    {
+      _id: "2",
+      title: "Second Topic",
+      description: "This is the second topic",
+    },
+    {
+      _id: "3",
+      title: "Third Topic",
+      description: "This is the third topic",
+    }
+  ]
 
   return (
     <>
