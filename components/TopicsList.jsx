@@ -4,7 +4,7 @@ import { HiPencilAlt } from "react-icons/hi";
 
 const getTopics = async () => {
   try {
-    console.log(process.env.NEXT_PUBLIC_API_URL);
+    // console.log(process.env.NEXT_PUBLIC_API_URL , 'helo world');
     const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/topics`, {
       cache: "no-store",
     });
@@ -21,24 +21,24 @@ const getTopics = async () => {
 };
 
 export default async function TopicsList() {
-  // const { topics } = await getTopics();
-  const topics = [
-    {
-      _id: "1",
-      title: "First Topic",
-      description: "This is the first topic",
-    },
-    {
-      _id: "2",
-      title: "Second Topic",
-      description: "This is the second topic",
-    },
-    {
-      _id: "3",
-      title: "Third Topic",
-      description: "This is the third topic",
-    }
-  ]
+  const { topics } = await getTopics();
+  // const topics = [
+  //   {
+  //     _id: "1",
+  //     title: "First Topic",
+  //     description: "This is the first topic",
+  //   },
+  //   {
+  //     _id: "2",
+  //     title: "Second Topic",
+  //     description: "This is the second topic",
+  //   },
+  //   {
+  //     _id: "3",
+  //     title: "Third Topic",
+  //     description: "This is the third topic",
+  //   }
+  // ]
 
   return (
     <>
